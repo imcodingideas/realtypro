@@ -6,6 +6,9 @@ class HomeType(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
 
+  def __str__(self):
+    return self.home_type
+
 class propertie(models.Model):
   PROPERTY_CHOICES = (
     ('S', 'Sale'),
@@ -29,6 +32,10 @@ class propertie(models.Model):
   home_type_id = models.ForeignKey(HomeType, on_delete=models.CASCADE, default=None, verbose_name="Home Type")
   rooms = models.IntegerField(default=0)
   contact_number = models.CharField(max_length=50)
+
+  def __str__(self):
+    return self.address
+
 
   class Meta:
     verbose_name = 'Property'
