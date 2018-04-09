@@ -36,10 +36,10 @@
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                joseph@michael-chambers.com
+                Hello, {{ user.username }}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="/accounts/profile/{{ user.id }}/">Profile</a>
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
                 <form id="logout" method="POST" action="{% url 'logout' %}">
